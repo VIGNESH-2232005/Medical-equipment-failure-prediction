@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Equipment Failure Prediction</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #b3e6ff, #e6f7ff);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+
+            /* Center the container */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 450px;
+            background: #ffffffcc; /* Slightly transparent white */
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #003f5c;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: bold;
+            color: #003049;
+            font-size: 17px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+            border: 1px solid #8d99ae;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #0077b6;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #023e8a;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #495057;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Equipment Failure Prediction</h2>
+
+    <form method="POST" action="/predict_form">
+
+        <label>Equipment Age (Years)</label>
+        <input type="number" name="Age" step="0.1" required>
+
+        <label>Maintenance Cost</label>
+        <input type="number" name="Maintenance_Cost" step="0.1" required>
+
+        <label>Downtime (Hours)</label>
+        <input type="number" name="Downtime" step="0.1" required>
+
+        <label>Maintenance Frequency</label>
+        <input type="number" name="Maintenance_Frequency" required>
+
+        <label>Failure Event Count</label>
+        <input type="number" name="Failure_Event_Count" required>
+
+        <label>Purchase Date</label>
+        <input type="date" name="Purchase_Date" required>
+
+        <button type="submit">Predict Failure</button>
+    </form>
+
+    <div class="footer">Powered by Machine Learning</div>
+</div>
+
+</body>
+</html>
